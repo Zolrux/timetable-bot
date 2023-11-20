@@ -53,7 +53,7 @@ function getNextSubject(currentTime, arr) {
 async function getSubject() {
   const db = await getData();
   const { getHours, getMinutes, dayWeek } = getCurrentTimeInfo();
-  const currentHoursAndMinutes = `${getHours}:${getMinutes}`;
+  const currentHoursAndMinutes = `${getHours + 1}:${getMinutes}`;
   let flag = false;
   let getSubject = null;
 
