@@ -10,7 +10,7 @@ function getCurrentTimeInfo() {
   const formatTime = (value) => (value < 10 ? `0${value}` : value);
   const currentDate = new Date();
   const getNumberDayWeek = currentDate.getDay();
-  const getHours = currentDate.getHours();
+  const getHours = currentDate.getHours() + 2;
   const getMinutes = formatTime(currentDate.getMinutes());
 
   return {
@@ -53,7 +53,7 @@ function getNextSubject(currentTime, arr) {
 async function getSubject() {
   const db = await getData();
   const { getHours, getMinutes, dayWeek } = getCurrentTimeInfo();
-  const currentHoursAndMinutes = `${getHours + 1}:${getMinutes}`;
+  const currentHoursAndMinutes = `${getHours}:${getMinutes}`;
   let flag = false;
   let getSubject = null;
 
