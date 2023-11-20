@@ -88,4 +88,4 @@ async function getValidMessage() {
 	}
 }
 
-module.exports = getValidMessage;
+module.exports = {getValidMessage, getCurrentTimeInfo};
