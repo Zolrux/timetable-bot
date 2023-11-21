@@ -6,9 +6,6 @@ function botActions() {
     const result = await getValidMessage();
     bot.sendMessage(m.chat.id, result);
   });
-  bot.onText(/время инфо/gi, async (m) => {
-	bot.sendMessage(m.chat.id, JSON.stringify(getCurrentTimeInfo()));
-  })
 }
 
 module.exports = botActions;
