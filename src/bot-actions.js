@@ -1,7 +1,9 @@
 const bot = require('./bot');
 const { getValidMessage, getCurrentTimeInfo } = require('./schedule');
 
-let timer = null;
+let timerInfo = { time: null };
+const testChatId = -4078181398;
+const kakunchikiId = -1001279682472;
 
 function botActions() {
   bot.onText(/^с?сылка пара$/gi, async (m) => {
@@ -9,26 +11,31 @@ function botActions() {
     bot.sendMessage(m.chat.id, result);
   });
   bot.onText(/^старт желание$/gi, async (m) => {
-    timer = sayGoodnight();
+    timerInfo.time = sayGoodnight(timerInfo);
   });
   bot.onText(/^стоп желание$/gi, async (m) => {
-    clearInterval(timer);
-    timer = null;
+    clearInterval(timerInfo.time);
+    timerInfo.time = null;
   });
   bot.onText(/^таймер$/gi, async (m) => {
-    bot.sendMessage(m.chat.id, JSON.stringify(timer));
+    console.log(m.chat.id);
+    bot.sendMessage(m.chat.id, JSON.stringify(timerInfo));
   });
 }
 
-function sayGoodnight() {
-  const updatesTimeMs = 1000 * 60;
-  timer = setInterval(() => {
+function sayGoodnight(timerInfo) {
+  const updatesTimeMs = 1000 * 10;
+  const timerId = setInterval(() => {
+
+    timerInfo.time = timerId[Symbol.toPrimitive]();
     const { getHours, getMinutes } = getCurrentTimeInfo();
+
     if (getHours === 23 && getMinutes === 55) {
       const message = 'Доброй ночи, господа!';
-      bot.sendMessage(-1001279682472, message);
+      bot.sendMessage(kakunchikiId, message);
     }
   }, updatesTimeMs);
+
 }
 
 module.exports = botActions;
