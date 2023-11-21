@@ -24,7 +24,7 @@ function botActions() {
 }
 
 function sayGoodnight(timerInfo) {
-  const updatesTimeMs = 1000 * 10;
+  const updatesTimeMs = 1000 * 60;
   const timerId = setInterval(() => {
 
     timerInfo.time = timerId[Symbol.toPrimitive]();
