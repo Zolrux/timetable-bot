@@ -1,7 +1,7 @@
 const bot = require('./bot');
 const { getValidMessage, getCurrentTimeInfo } = require('./schedule');
 
-let timerInfo = { sayGoodnightTimeId: null, autoSendActiveSubjectTimeId: null };
+let timerInfo = { sayGoodnightTimeId: null, /* autoSendActiveSubjectTimeId: null */ };
 const testChatId = -4078181398;
 const kakunchikiId = -1001279682472;
 
@@ -38,19 +38,19 @@ function sayGoodnight(timerInfo) {
 
 }
 
-function autoSendActiveSubject() {
-	const updatesTimeMs = 1000 * 60;
-	const timerId = setInterval(async () => {
+// function autoSendActiveSubject() {
+// 	const updatesTimeMs = 1000 * 60;
+// 	const timerId = setInterval(async () => {
  
-	  timerInfo.autoSendActiveSubjectTimeId = timerId[Symbol.toPrimitive]();
-	  const { getHours, getMinutes } = getCurrentTimeInfo();
-	  const result = await getValidMessage();
+// 	  timerInfo.autoSendActiveSubjectTimeId = timerId[Symbol.toPrimitive]();
+// 	  const { getHours, getMinutes } = getCurrentTimeInfo();
+// 	  const result = await getValidMessage();
  
-	  if (getHours === 23 && getMinutes === 55) {
-		 const message = 'Доброй ночи, господа!';
-		 bot.sendMessage(testChatId, message);
-	  }
-	}, updatesTimeMs);
-}
+// 	  if (getHours === 23 && getMinutes === 55) {
+// 		 const message = 'Доброй ночи, господа!';
+// 		 bot.sendMessage(testChatId, message);
+// 	  }
+// 	}, updatesTimeMs);
+// }
 
 module.exports = botActions;
