@@ -1,29 +1,6 @@
 [
   [
     {
-      "subjectName": "мсши лб",
-      "subjectLink": "https://us05web.zoom.us/j/5259994985?pwd=cGllN2luTEJoaW9EdC9KNnFHcER4QT09",
-      "subjectDate": "пн",
-      "subjectStartTime": "8:00",
-      "subjectEndTime": "9:20"
-    },
-    {
-      "subjectName": "веб лк",
-      "subjectLink": "https://us02web.zoom.us/j/86832967273?pwd=aXFiZnozOUhjeUlMbmhBWXdiTGU1QT09",
-      "subjectDate": "пн",
-      "subjectStartTime": "11:10",
-      "subjectEndTime": "12:30"
-    }
-  ],
-  [
-    {
-      "subjectName": "трспо лк",
-      "subjectLink": "https://us04web.zoom.us/j/2280482649?pwd=ZGJQTndMdHdRT2ZGRmttZjdHVzE1UT09",
-      "subjectDate": "вт",
-      "subjectStartTime": "8:00",
-      "subjectEndTime": "9:20"
-    },
-    {
       "subjectName": "тзи лб",
       "subjectLink": "https://zoom.us/j/5543600598?pwd=allYdjdkY1Y5QTJDM2tqNlE0Z29NZz09",
       "subjectDate": "вт",
@@ -32,13 +9,6 @@
     }
   ],
   [
-    {
-      "subjectName": "япзт лк",
-      "subjectLink": "https://us04web.zoom.us/j/8597949580?pwd=Y1R3bExKZ3JqRHNhcDllem4rWmtVUT09",
-      "subjectDate": "ср",
-      "subjectStartTime": "8:00",
-      "subjectEndTime": "9:20"
-    },
     {
       "subjectName": "бжоп пр",
       "subjectLink": "https://us04web.zoom.us/j/8659039826?pwd=SnVCeXZOSWhyZ2hlYTJTQVhvQW1pUT09",
