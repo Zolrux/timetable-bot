@@ -31,7 +31,7 @@ function sayGoodnight(timerInfo) {
     const { getHours, getMinutes } = getCurrentTimeInfo();
 
     if (getHours === 23 && getMinutes === 55) {
-      const message = 'Доброй ночи, господа!';
+      const message = 'СпоХАЖПОРНЖУХВкойной ночи!';
       bot.sendMessage(kakunchikiId, message);
     }
   }, updatesTimeMs);
