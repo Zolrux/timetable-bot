@@ -1,5 +1,6 @@
 const bot = require('./bot');
 const { getValidMessage, getCurrentTimeInfo } = require('./schedule');
+const calculateLab1Mk = require('./calculateMk');
 
 let timerInfo = { sayGoodnightTimeId: null, /* autoSendActiveSubjectTimeId: null */ };
 const testChatId = -4078181398;
@@ -8,7 +9,7 @@ const kakunchikiId = -1001279682472;
 function botActions() {
   bot.onText(/^с?сылка пара$/gi, async (m) => {
     const result = await getValidMessage();
-    bot.sendMessage(m.chat.id, result);
+    await bot.sendMessage(m.chat.id, result);
   });
   bot.onText(/^старт желание$/gi, async (m) => {
     timerInfo.sayGoodnightTimeId = sayGoodnight(timerInfo);
@@ -18,8 +19,11 @@ function botActions() {
     timerInfo.sayGoodnightTimeId = null;
   });
   bot.onText(/^таймер$/gi, async (m) => {
-    console.log(m.chat.id);
-    bot.sendMessage(m.chat.id, JSON.stringify(timerInfo));
+    await bot.sendMessage(testChatId, JSON.stringify(timerInfo));
+  });
+  bot.onText(/^рас?счет вариант \d+$/gi, async (m) => {
+	const message = calculateLab1Mk(m.text);
+	await bot.sendMessage(kakunchikiId, message);
   });
 }
 
